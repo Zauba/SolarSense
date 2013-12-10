@@ -28,7 +28,6 @@ void setup() {
   // Setup LCD
   pinMode(9, OUTPUT);  
   lcd.begin(16,2);
-  lcd.print("LDR Sensors");
   analogWrite(9, bright);
 
 }
@@ -44,10 +43,14 @@ void loop() {
   int LDRY = LDRN - LDRS ;
   int LDRX = LDRW - LDRE ;
  
-  // Display values on LCD   
-  lcd.setCursor(0,1);  
+  // Display values on LCD
+  lcd.clear();
+  lcd.print("LDR Sensors");  
+  lcd.setCursor(0,1);
+  lcd.print("Y: ");  
   lcd.print(LDRY);
   lcd.setCursor(8,1);
+  lcd.print("X: ");
   lcd.print(LDRX);
 
   // Serial output of values  
