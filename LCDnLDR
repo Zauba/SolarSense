@@ -5,6 +5,8 @@
  * D5: Pin 25
  * D6: Pin 26
  * D7: Pin 27
+ * Vo: Pin
+ * LED+ : 5V
  */
  
 #include <LiquidCrystal.h>
@@ -24,9 +26,11 @@ void setup() {
   Serial.begin(9600);
   
   // Setup LCD
+  pinMode(9, OUTPUT);  
   lcd.begin(16,2);
   lcd.print("LDR Sensors");
-  
+  analogWrite(9, bright);
+
 }
 
 void loop() {
@@ -54,4 +58,5 @@ void loop() {
   Serial.println(LDRE);
   Serial.println(LDRX);
   delay(1000);  
+  
 }
