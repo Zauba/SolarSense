@@ -1,24 +1,24 @@
-/* LCD Pins
- * RS: Pin 22
- * EN: Pin 23
- * D4: Pin 24
- * D5: Pin 25
- * D6: Pin 26
- * D7: Pin 27
- * Vo: Pin
- * LED+ : 5V
- */
- 
+
 #include <LiquidCrystal.h>
 
-LiquidCrystal lcd(22,23,24,25,26,27);
+// LCD Pins
+// LED+ : 5V
+#define RS 22
+#define EN 23
+#define D4 24
+#define D5 25
+#define D6 26
+#define D7 27
+// #define Vo: Pin
+
+LiquidCrystal lcd(RS,EN,D4,D5,D6,D7);
 int bright = 65;
 
- // LDR Setup
- int LDRN_Pin = A0; // LDR North
- int LDRS_Pin = A1; // LDR South
- int LDRW_Pin = A2; // LDR West
- int LDRE_Pin = A3; // LDR East
+// LDR Pins
+#define LDRN_Pin A0 // LDR North
+#define LDRS_Pin A1 // LDR South
+#define LDRW_Pin A2 // LDR West
+#define LDRE_Pin A3 // LDR East
 
 void setup() {
 
@@ -29,7 +29,6 @@ void setup() {
   pinMode(9, OUTPUT);  
   lcd.begin(16,2);
   analogWrite(9, bright);
-
 }
 
 void loop() {
