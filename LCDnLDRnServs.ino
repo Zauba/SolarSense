@@ -46,7 +46,7 @@ void setup() {
   // Setup LCD
   pinMode(9, OUTPUT);  
   lcd.begin(16,2);
-  analogWrite(9, bright);
+  analogWrite(11, bright);
 }
 
 void loop() {
